@@ -2,8 +2,7 @@
 //getElementByClassName ()
 //getElementByTag () 
 //querySelector () 
-//querySelectorAll () 
-
+//querySelectorAll ()
 let listItem = document.querySelectorAll ('li');
 console.log (listItem);
 
@@ -28,13 +27,23 @@ console.log (firstListItem.innerHTML);
 
 li.innerText = "Salutare Jupane!";
 
-//Modifiying atributes and classes
-li.setAttribute("class", "films-item");
+//Modificare Text - Preluarea ID ului 
+/* li.setAttribute ('id', 'main-heading');
+console.log (li.getAttribute ('id'));
 
-listItem = document.queeySelectorAll ('li');
-for (let i = 0; i<listItem.length; i++) { 
-    listItem[i].style.color = 'red';
-}
+listItem = document.querySelectorAll ('li');
+for (let i = 0; i <listItem.length; i++) { 
+    listItem[i].style.color = 'red';  
+} 
 
-const title = document.querySelector ('#main-heading');
-console.log (title.getAttribute('id'));
+li.removeAttribute ('id'); */
+
+//Modificare Text - Preluarea Clasei
+li.classList.add ("films-item");
+console.log (li.classList.contains('films-item'));
+
+li.classList.remove ("films-item");
+console.log (li.classList.contains("films-item"));
+
+//Remove Elements
+li.remove ();

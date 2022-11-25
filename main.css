@@ -13,14 +13,10 @@ body {
     border-radius: 5%;
 }
 
-li {  
+.films-item {  
     border-bottom-style: ridge;
     text-align: center;
     border-color:darkblue;
-}
-
-li:nth-child(4) { 
-    border-bottom: 0;
 }
 
 ul {
@@ -31,3 +27,6 @@ ul {
     border-radius: 5%;
 }
 
+#last {  
+    border-bottom: 0;
+}
