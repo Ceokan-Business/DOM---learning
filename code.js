@@ -1,49 +1,45 @@
-//getElementByID ()
-//getElementByClassName ()
-//getElementByTag () 
-//querySelector () 
-//querySelectorAll ()
-let listItem = document.querySelectorAll ('li');
-console.log (listItem);
+//Dom Manipulation
 
-/*  listItem.style.color = 'blue'; - error*/
+//Traverse the DOM
 
-for (let i = 0; i < listItem.length; i++) { 
-    listItem[i].style.color = 'blue';
-} /* Done*/
+//Parent Node Traversal
 
-//Creating elements
-const ul = document.querySelector('ul');
-const li = document.createElement('li');
+/* let ul = document.querySelector('ul');
+console.log (ul.parentNode.parentNode);
+console.log (ul.parentElement.parentElement); */
 
-ul.append (li);
 
-//Modify the text
+    //diferenta dintre Node si Element
+/* const html = document.documentElement;
+console.log (html.parentNode);
+console.log (html.parentElement);  */
+    //mai folosit e parentNode
 
-const firstListItem = document.querySelector ('.films-item');
-console.log (firstListItem.innerText); //cel mai folosit
-console.log (firstListItem.textContent);
-console.log (firstListItem.innerHTML);
+//Child Note Traversal
 
-li.innerText = "Salutare Jupane!";
+/* console.log(ul.childNodes); 
+console.log (ul.firstChild);
+console.log (ul.lastChild); */
+    //Spatiile din HTML sunt notate ca si elemente in childNotes
+    //E o problema pentru styling
 
-//Modificare Text - Preluarea ID ului 
-/* li.setAttribute ('id', 'main-heading');
-console.log (li.getAttribute ('id'));
+    //ul.firstChild.style.backgroundColor=  'green'; -> error
+/* ul.childNodes[1].style.backgroundColor = 'green'; */
 
-listItem = document.querySelectorAll ('li');
-for (let i = 0; i <listItem.length; i++) { 
-    listItem[i].style.color = 'red';  
-} 
+    // fara liniile de text din HTML
+/* console.log (ul.children); 
+console.log (ul.firstElementChild.innerText);
+console.log (ul.lastElementChild.innerText); */
 
-li.removeAttribute ('id'); */
+//Sibling Note Traversal
+const div = document.querySelector('div');
+console.log (div.childNodes);
 
-//Modificare Text - Preluarea Clasei
-li.classList.add ("films-item");
-console.log (li.classList.contains('films-item'));
 
-li.classList.remove ("films-item");
-console.log (li.classList.contains("films-item"));
+let ul = document.querySelector('ul');
+/* console.log (ul.previousSibling);
+console.log (ul.nextSibling);   */
 
-//Remove Elements
-li.remove ();
+    //fara textul din HTML 
+console.log (ul.previousElementSibling.innerText);
+console.log (ul.nextElementSibling);
