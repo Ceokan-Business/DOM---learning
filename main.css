@@ -1,0 +1,33 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10em;
+    border: ridge darkred 0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-bottom: 0.25em;
+    border-radius: 5%;
+}
+
+li {  
+    border-bottom-style: ridge;
+    text-align: center;
+    border-color:darkblue;
+}
+
+li:nth-child(4) { 
+    border-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+    border-style: ridge;
+    line-height: 1.8em;
+    border-color:darkblue;
+    border-radius: 5%;
+}
+
