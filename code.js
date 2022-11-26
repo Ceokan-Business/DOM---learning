@@ -1,57 +1,57 @@
-//Eevent listener
+//Event Propagation
 
-//element.addEventListener ('click', function)
+/*
+window.addEventListener  ("click", function () { 
+    console.log ("window");
+},true);
 
-const buttonTwo = document.querySelector ('.button2');
+document.addEventListener ("click", function () {
+    console.log ("document");
+}, true);
 
-function bTN () { 
-    alert ('I alsa love JS');
-};
+document.querySelector('.div-2').addEventListener("click", function (e) { 
+    // e.stopPropagation ();  ---> opreste de tot
+    console.log ("Div 2");
+}, {once: true});
 
-buttonTwo.addEventListener ("click", bTN);
 
-//mouseover
+document.querySelector (".div-1").addEventListener("click", function () {
+    console.log ("Div 1");
+},true);
 
-/* let newBackgroundColor = document.querySelector('.button3'); */
-/* console.log(newBackgroundColor); */
-/*  */
-/* function changeBGcolor () { */
-/*     newBackgroundColor.style.backgroungColor = 'blue'; */
-/* } */
-/*  */
-/* newBackgroundColor.addEventListener ("mouseover", changeBGcolor);  */
+document.querySelector("button").addEventListener ("click", function (e) {
+    console.log (e.target.innerText = 'clicked'); // e - obiectul pentru eveniment
+}, true); */
 
-let newBackgroundColor = document.querySelector ('.button3');
-console.log (newBackgroundColor);
+//-----
+window.addEventListener  ("click", function () { 
+    console.log ("window");
+},false);
 
-function changeBgColor () { 
-    newBackgroundColor.style.backgroundColor = 'red';
-};
+document.addEventListener ("click", function () {
+    console.log ("document");
+}, false);
 
-newBackgroundColor.addEventListener ('mouseover', changeBgColor);
+document.querySelector('.div-2').addEventListener("click", function () { 
+    console.log ("Div 2");
+}, {once: true});
 
-//Show content 
-const hiddenContent =  document.querySelector (".hidden-content");
-console.log (hiddenContent);
 
-const revealBtn = document.querySelector (".reveal-btn");
-console.log (revealBtn);
+document.querySelector (".div-1").addEventListener("click", function () {
+    console.log ("Div 1");
+},false);
 
-function revealContent () { 
-    if (hiddenContent.classList.contains ('reveal-btn')) 
-    {
-        hiddenContent.classList.remove('reveal-btn');
-    }
-    else 
-    {
-        hiddenContent.classList.add('reveal-btn');
-    }
-};
+document.querySelector("button").addEventListener ("click", function (e) {
+    console.log (e.target.innerText = 'clicked'); // e - obiectul pentru eveniment
+}, false);
 
-revealBtn.addEventListener ('click', revealContent);    
+//Daca e fals - propagarea se face de la obiect la sursa
+//Daca e adevarat - propagarea se face in ordinea dorita   
+//e.stopPropagation () - in ambele sensuri 
 
-/*  function seeClass ()  { 
-    console.log (hiddenContent.classList.contains(".reveal-btn"));
-};
 
-revealBtn.addEventListener ('click', seeClass);     */
+//PREVENT DEFAULT METHOD - ex. for anchor tag
+document.querySelector(".btn-default").addEventListener ("click", function (e) { 
+    e.preventDefault ();
+    console.log (e.target.innerText = "clicked-1");
+})
