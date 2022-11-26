@@ -1,45 +1,57 @@
-//Dom Manipulation
+//Eevent listener
 
-//Traverse the DOM
+//element.addEventListener ('click', function)
 
-//Parent Node Traversal
+const buttonTwo = document.querySelector ('.button2');
 
-/* let ul = document.querySelector('ul');
-console.log (ul.parentNode.parentNode);
-console.log (ul.parentElement.parentElement); */
+function bTN () { 
+    alert ('I alsa love JS');
+};
 
+buttonTwo.addEventListener ("click", bTN);
 
-    //diferenta dintre Node si Element
-/* const html = document.documentElement;
-console.log (html.parentNode);
-console.log (html.parentElement);  */
-    //mai folosit e parentNode
+//mouseover
 
-//Child Note Traversal
+/* let newBackgroundColor = document.querySelector('.button3'); */
+/* console.log(newBackgroundColor); */
+/*  */
+/* function changeBGcolor () { */
+/*     newBackgroundColor.style.backgroungColor = 'blue'; */
+/* } */
+/*  */
+/* newBackgroundColor.addEventListener ("mouseover", changeBGcolor);  */
 
-/* console.log(ul.childNodes); 
-console.log (ul.firstChild);
-console.log (ul.lastChild); */
-    //Spatiile din HTML sunt notate ca si elemente in childNotes
-    //E o problema pentru styling
+let newBackgroundColor = document.querySelector ('.button3');
+console.log (newBackgroundColor);
 
-    //ul.firstChild.style.backgroundColor=  'green'; -> error
-/* ul.childNodes[1].style.backgroundColor = 'green'; */
+function changeBgColor () { 
+    newBackgroundColor.style.backgroundColor = 'red';
+};
 
-    // fara liniile de text din HTML
-/* console.log (ul.children); 
-console.log (ul.firstElementChild.innerText);
-console.log (ul.lastElementChild.innerText); */
+newBackgroundColor.addEventListener ('mouseover', changeBgColor);
 
-//Sibling Note Traversal
-const div = document.querySelector('div');
-console.log (div.childNodes);
+//Show content 
+const hiddenContent =  document.querySelector (".hidden-content");
+console.log (hiddenContent);
 
+const revealBtn = document.querySelector (".reveal-btn");
+console.log (revealBtn);
 
-let ul = document.querySelector('ul');
-/* console.log (ul.previousSibling);
-console.log (ul.nextSibling);   */
+function revealContent () { 
+    if (hiddenContent.classList.contains ('reveal-btn')) 
+    {
+        hiddenContent.classList.remove('reveal-btn');
+    }
+    else 
+    {
+        hiddenContent.classList.add('reveal-btn');
+    }
+};
 
-    //fara textul din HTML 
-console.log (ul.previousElementSibling.innerText);
-console.log (ul.nextElementSibling);
+revealBtn.addEventListener ('click', revealContent);    
+
+/*  function seeClass ()  { 
+    console.log (hiddenContent.classList.contains(".reveal-btn"));
+};
+
+revealBtn.addEventListener ('click', seeClass);     */

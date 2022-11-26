@@ -4,29 +4,25 @@
     box-sizing: border-box;
 }
 
-body {
+.container { 
     margin: 10em;
-    border: ridge darkred 0.25em;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    padding-bottom: 0.25em;
-    border-radius: 5%;
-}
-
-.films-item {  
-    border-bottom-style: ridge;
     text-align: center;
-    border-color:darkblue;
 }
 
-ul {
-    list-style-type: none;
-    border-style: ridge;
-    line-height: 1.8em;
-    border-color:darkblue;
-    border-radius: 5%;
+.box-1, .box-2, .box-3 { 
+    margin: 2em;
+    border: ridge darkblue 0.2em;
+    padding:0.4em;
 }
 
-#last {  
-    border-bottom: 0;
+#heading { 
+    padding-bottom: 0.4em;
 }
+
+ .hidden-content { 
+    display: none;
+}
+
+ .hidden-content.reveal-btn{ 
+    display: block; 
+}  
